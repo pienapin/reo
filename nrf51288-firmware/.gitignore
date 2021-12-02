@@ -1,0 +1,16 @@
+*.o
+*.hex
+*.map
+*.bin
+*.out
+
+# Add precompiled .hex
+!precompiled/*.hex
+
+# ignore eclipse project files
+.cproject
+.metadata/
+.project
+.settings/
+
+

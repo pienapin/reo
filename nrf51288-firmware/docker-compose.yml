@@ -1,0 +1,24 @@
+version: "2.4"
+services:
+  # OpenOCD server
+  openocd:
+    build:
+        context: .
+        dockerfile: Dockerfile_openocd
+    image: rene-openocd:latest
+    network_mode: host
+    volumes:
+      - ./:/usr/src/nRF5_SDK_11/nrf51288-firmware
+    devices:
+      - "/dev/bus"
+  # Nordic SDK toolchain
+  toolchain:
+    build:
+        context: .
+        dockerfile: Dockerfile_toolchain
+    image: rene-toolchain:latest
+    network_mode: host
+    volumes:
+      - ./:/usr/src/nRF5_SDK_11/nrf51288-firmware
+    depends_on:
+        - openocd
