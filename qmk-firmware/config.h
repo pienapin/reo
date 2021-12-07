@@ -20,8 +20,8 @@
 
 /* USB Device descriptor parameter */
 
-#define VENDOR_ID       0x4D44 //MD
-#define PRODUCT_ID      0x5257 //RW
+#define VENDOR_ID       0x5353 // SS - satusembilanbelas
+#define PRODUCT_ID      0x5245 // RE
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    pienapin
 #define PRODUCT         rene
