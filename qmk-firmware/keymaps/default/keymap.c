@@ -7,17 +7,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,   KC_Q, KC_D, KC_W, KC_R, KC_W,                         KC_J, KC_F, KC_U,    KC_P,   KC_SCLN, KC_QUOTE,
   KC_TAB,   KC_A, KC_S, KC_H, KC_T, KC_G,                         KC_Y, KC_N, KC_E,    KC_O,   KC_I,    KC_ENT,
   KC_SHIFT, KC_Z, KC_X, KC_M, KC_C, KC_V,                         KC_K, KC_L, KC_COMM, KC_DOT, KC_SLSH, GUI_ON,
-                KC_LALT, KC_LGUI, LT(2,KC_SPC),                     KC_BSPC, KC_, KC_,
-                        KC_LCTL, MO(2),                              DF(1), KC_A
+              KC_LALT, KC_LGUI, KC_LCTL,                            KC_DOWN, KC_UP, KC_RGHT,
+                  LT(2,KC_SPC), DF(1),                               KC_LEFT, KC_BSPC
   
   ),
 
   [1] = LAYOUT(
   KC_ESC,   KC_Q, KC_W, KC_E, KC_R, KC_T,                         KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_QUOTE,
   KC_TAB,   KC_A, KC_S, KC_D, KC_F, KC_G,                         KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_ENT,
-  KC_SHIFT, KC_Z, KC_X, KC_C, KC_V, KC_B,                         KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, GUI_ON,
-                KC_LCTL, KC_SPC, MO(2),                             KC_BSPC, KC_, KC_,
-                        KC_LALT, LT(2,KC_SPC),                       DF(0), KC_A
+  KC_SHIFT, KC_Z, KC_X, KC_C, KC_V, KC_B,                         KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, GUI_OFF,
+              KC_LCTL, KC_SPC, KC_LALT,                             KC_BSPC, KC_, KC_,
+                        MO(2), DF(0),                                 KC_, KC_BSPC
   ),
 
   [2] = LAYOUT(
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case 0:
-            set_led_off;
+            set_led_cyan;
             break;
         case 1:
             set_led_green;
