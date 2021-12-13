@@ -1,4 +1,4 @@
-PROJECT_NAME := rene-receiver
+PROJECT_NAME := reo-receiver
 
 SDK_ROOT ?= ../../../..
 

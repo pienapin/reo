@@ -1,4 +1,4 @@
-PROJECT_NAME := rene-keyboard-basic
+PROJECT_NAME := reo-keyboard-basic
 
 export OUTPUT_FILENAME
 

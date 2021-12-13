@@ -2,7 +2,7 @@
  * Either COMPILE_RIGHT or COMPILE_LEFT has to be defined from the make call to allow proper functionality
  */
 
-#include "rene.h"
+#include "reo.h"
 #include "nrf_drv_config.h"
 #include "nrf_gzll.h"
 #include "nrf_gpio.h"

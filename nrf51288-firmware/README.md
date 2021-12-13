@@ -1,5 +1,5 @@
 # Firmware for the nrf51288 (Modified from [Redox Wireless Firmware](https://github.com/mattdibi/redox-w-firmware))
-Firmware for Nordic MCUs used in the rene, as well as sources buildable with the Nordic SDK.
+Firmware for Nordic MCUs used in the reo, as well as sources buildable with the Nordic SDK.
 This firmware was derived from [Reversebias' Mitosis](https://github.com/reversebias/mitosis), [Durburz's Interphase](https://github.com/Durburz/interphase-firmware/) firmware and [Redox Wireless Firmware](https://github.com/mattdibi/redox-w-firmware)
 
 ## Docker-based development environment installation
@@ -22,19 +22,19 @@ After the process completes you should see three new images:
 ```
 $ docker images
 REPOSITORY           TAG       IMAGE ID       CREATED          SIZE
-rene-toolchain   latest    810de995238e   16 minutes ago   896MB
-rene-openocd     latest    173d86d1409c   18 minutes ago   168MB
+reo-toolchain   latest    810de995238e   16 minutes ago   896MB
+reo-openocd     latest    173d86d1409c   18 minutes ago   168MB
 ubuntu               16.04     8185511cd5ad   4 weeks ago      132MB
 ```
 
 #### Run the two images using docker compose
 
-After connecting the STLinkV2 debugger, from inside the `rene-firmware` folder run:
+After connecting the STLinkV2 debugger, from inside the `reo-firmware` folder run:
 
 ```
 $ docker-compose up -d
-Creating rene-firmware_openocd_1 ... done
-Creating rene-firmware_toolchain_1 ... done
+Creating reo-firmware_openocd_1 ... done
+Creating reo-firmware_toolchain_1 ... done
 ```
 
 You should see the two containers running:
@@ -42,8 +42,8 @@ You should see the two containers running:
 ```
 $ docker ps
 CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS     NAMES
-84f606ad7e25   rene-toolchain:latest   "tail -f /dev/null"      4 seconds ago   Up 3 seconds             rene-firmware_toolchain_1
-8d0d6b5da95a   rene-openocd:latest     "/bin/sh -c 'openocd…"   4 seconds ago   Up 3 seconds             rene-firmware_openocd_1
+84f606ad7e25   reo-toolchain:latest   "tail -f /dev/null"      4 seconds ago   Up 3 seconds             reo-firmware_toolchain_1
+8d0d6b5da95a   reo-openocd:latest     "/bin/sh -c 'openocd…"   4 seconds ago   Up 3 seconds             reo-firmware_openocd_1
 ```
 
 You can now start making changes in the code.
@@ -53,21 +53,21 @@ You can now start making changes in the code.
 After you're satisfied with your changes you can build and upload the firmware by issuing the following:
 
 ```
-$ docker exec -it rene-firmware_toolchain_1 ./nrf51288-firmware/rene-receiver/program.sh
-$ docker exec -it rene-firmware_toolchain_1 ./nrf51288-firmware/rene-keyboard/program_right.sh
-$ docker exec -it rene-firmware_toolchain_1 ./nrf51288-firmware/rene-keyboard/program_left.sh
+$ docker exec -it reo-firmware_toolchain_1 ./nrf51288-firmware/reo-receiver/program.sh
+$ docker exec -it reo-firmware_toolchain_1 ./nrf51288-firmware/reo-keyboard/program_right.sh
+$ docker exec -it reo-firmware_toolchain_1 ./nrf51288-firmware/reo-keyboard/program_left.sh
 ```
 
 #### Stop the containers
 
-To stop the two running containers, from inside the `rene-firmware` folder run:
+To stop the two running containers, from inside the `reo-firmware` folder run:
 
 ```
 $ docker-compose down
-Stopping rene-firmware_toolchain_1 ... done
-Stopping rene-firmware_openocd_1   ... done
-Removing rene-firmware_toolchain_1 ... done
-Removing rene-firmware_openocd_1   ... done
+Stopping reo-firmware_toolchain_1 ... done
+Stopping reo-firmware_openocd_1   ... done
+Removing reo-firmware_toolchain_1 ... done
+Removing reo-firmware_openocd_1   ... done
 ```
 
 <!-- ## Native development environment installation

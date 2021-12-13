@@ -24,7 +24,7 @@
 #define PRODUCT_ID      0x5245 // RE
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    pienapin
-#define PRODUCT         rene
+#define PRODUCT         reo
 
 /* key matrix size */
 #define MATRIX_ROWS 4
