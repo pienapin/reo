@@ -9,18 +9,18 @@
 
 #define PIPE_NUMBER 0
 
-#define C01 3
-#define C02 4
-#define C03 5
-#define C04 6
-#define C05 7
-#define C06 9
+#define C01 10
+#define C02 9
+#define C03 8
+#define C04 7
+#define C05 6
+#define C06 5
 // #define C07 10
 
-#define R01 19
+#define R01 20
 #define R02 18
-#define R03 17
-#define R04 14
+#define R03 19
+#define R04 17
 // #define R05 13
 
 #endif
@@ -31,16 +31,16 @@
 
 #define C01 30
 #define C02 0
-#define C03 2
-#define C04 3
-#define C05 4
-#define C06 5
+#define C03 1
+#define C04 2
+#define C05 3
+#define C06 4
 // #define C07 6
 
-#define R01 21
-#define R02 22
-#define R03 23
-#define R04 28
+#define R01 22
+#define R02 23
+#define R03 24
+#define R04 25
 // #define R05 29
 
 #endif
